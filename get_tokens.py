@@ -105,6 +105,7 @@ if __name__ == '__main__':
             reps = np.load(reps_path)
             # segmentation
             boundaries, label_tokens = segment(reps, kmeans_model, pen, lambd)
+            label_tokens = [str(t) for t in label_tokens]
             with open(output_path, 'w+') as f:
                 f.write(' '.join(label_tokens))
     # -------------------------------------------------
